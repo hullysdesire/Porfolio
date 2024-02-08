@@ -66,7 +66,7 @@
                             </div>
                             <div class="hero-btn">
                                 <a class="btn" href="">Engager Moi</a>
-                                <a class="btn" href="">Contacter Moi</a>
+                                <a class="btn" href="/img/Mon CV professionnel.png" download>Télécharger mon CV</a>
                             </div>
                         </div>
                     </div>
@@ -155,7 +155,7 @@
                                     <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
-                            <a class="btn" href="">Engager moi</a>
+                            <a class="btn" href="/img/Mon CV professionnel.png" download>Télécharger mon CV</a>
                         </div>
                     </div>
                 </div>
@@ -563,25 +563,44 @@
                                 <div id="success"></div>
                                 <form name="sentMessage" id="contactForm" novalidate="novalidate">
                                     <div class="control-group">
-                                        <input type="text" class="form-control" id="name" placeholder="Votre Nom" required="required" data-validation-required-message="Please enter your name" />
+                                        <input type="text" class="form-control" id="name" placeholder="Votre Nom" required="required" data-validation-required-message="S'il vous plaît veuillez entrer votre nom" />
                                         <p class="help-block"></p>
                                     </div>
                                     <div class="control-group">
-                                        <input type="email" class="form-control" id="email" placeholder="Votre Email" required="required" data-validation-required-message="Please enter your email" />
+                                        <input type="email" class="form-control" id="email" placeholder="Votre Email" required="required" data-validation-required-message="S'il vous plaît veuillez entrer votre e-mail" />
                                         <p class="help-block"></p>
                                     </div>
                                     <div class="control-group">
-                                        <input type="text" class="form-control" id="subject" placeholder="Sujet" required="required" data-validation-required-message="Please enter a subject" />
+                                        <input type="text" class="form-control" id="subject" placeholder="Sujet" required="required" data-validation-required-message="S'il vous plaît veuillez entrer un sujet de conversation" />
                                         <p class="help-block"></p>
                                     </div>
                                     <div class="control-group">
-                                        <textarea class="form-control" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
+                                        <textarea class="form-control" id="message" placeholder="Message" required="required" data-validation-required-message="S'il vous plaît veuillez entrer votre message"></textarea>
                                         <p class="help-block"></p>
                                     </div>
                                     <div>
                                         <button class="btn" type="submit" id="sendMessageButton">Envoyer un message</button>
                                     </div>
                                 </form>
+                                
+                                <script>
+                                document.getElementById('contactForm').addEventListener('submit', function(event) {
+                                    event.preventDefault();
+                                
+                                    let name = document.getElementById('name').value;
+                                    let email = document.getElementById('email').value;
+                                    let subject = document.getElementById('subject').value;
+                                    let message = document.getElementById('message').value;
+                                
+                                    if(name && email && subject && message) {
+                                        // Ajoutez ici le code pour envoyer le message à votre serveur
+                                        console.log('Message envoyé');
+                                    } else {
+                                        console.log('Tous les champs sont requis');
+                                    }
+                                });
+                                </script>
+                                
                             </div>
                         </div>
                     </div>
